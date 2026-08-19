@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------
+# Core web framework
+# ---------------------------------------------------------------------------
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# ---------------------------------------------------------------------------
+# Agentic orchestration
+# ---------------------------------------------------------------------------
+langgraph==0.2.62
+langchain==0.3.14
+langchain-core==0.3.29
+langchain-community==0.3.14
+
+# ---------------------------------------------------------------------------
+# LLM access via mentor's OpenAI-compatible Gemini proxy
+# ---------------------------------------------------------------------------
+langchain-openai==0.2.14
+
+# Native google-genai SDK - kept for any direct/raw Gemini calls
+# (e.g. image captioning with the vision model) that go through the
+# proxy's native endpoint instead of the OpenAI-compatible one.
+google-genai==0.3.0
+
+# ---------------------------------------------------------------------------
+# Vector database (embedded/local mode, no server needed)
+# ---------------------------------------------------------------------------
+qdrant-client==1.12.1
+langchain-qdrant==0.2.0
+
+# ---------------------------------------------------------------------------
+# PDF / document processing
+# ---------------------------------------------------------------------------
+pymupdf==1.25.1        # PDF text + image extraction (imported as `fitz`)
+pypdf==5.1.0            # fallback/utility PDF operations
+
+# ---------------------------------------------------------------------------
+# Web search tool
+# ---------------------------------------------------------------------------
+tavily-python==0.5.0
+
+# ---------------------------------------------------------------------------
+# Utilities
+# ---------------------------------------------------------------------------
+python-dotenv==1.0.1
+tenacity==9.0.0         # retry logic with backoff, used for API calls
+python-multipart==0.0.20  # required by FastAPI for file uploads (/ingest)
+
+# ---------------------------------------------------------------------------
+# Testing
+# ---------------------------------------------------------------------------
+pytest==8.3.4
+pytest-asyncio==0.25.2
+httpx==0.28.1            # used by FastAPI's TestClient
