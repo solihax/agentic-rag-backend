@@ -49,9 +49,10 @@ class Settings(BaseSettings):
     # Mentor-issued LiteLLM proxy. OpenAI-compatible endpoint is used for
     # chat + embeddings (via langchain-openai). The native google-genai SDK
     # endpoint is kept separate in case any code path needs raw Gemini calls.
-    gemini_proxy_openai_base_url: str = Field(
-        default="https://saidazam-litellm-proxy.hf.space/v1",
-        description="OpenAI-compatible base URL for the Gemini proxy (used by ChatOpenAI/OpenAIEmbeddings).",
+   gemini_proxy_openai_base_url: str = Field(
+    default="https://generativelanguage.googleapis.com/v1beta/openai/",
+    description="OpenAI-compatible base URL for the Gemini proxy (used by ChatOpenAI/OpenAIEmbeddings).",
+)
     )
     gemini_proxy_native_base_url: str = Field(
         default="https://saidazam-litellm-proxy.hf.space/gemini",
